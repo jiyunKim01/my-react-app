@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+:root {
+  --ruler: 16px;
+  --color-red: #AE1100;
+  --color-bg: #EBECF0;
+  --color-shadow: #BABECC;
+  --color-white: #FFF;
+}
+
+.button,
+[role=button]{
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  transition: 300ms ease-in-out;
+}
+
+/* .input2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px #fff;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #f0f0f0;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 300ms ease-in-out;
+}
+
+.input2:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #fff;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: white;
+}
+
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input2 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  transition: 300ms ease-in-out;
+  width: 150px; /* 추가된 부분: 버튼과 동일한 너비 */
+  height: 50px; /* 추가된 부분: 버튼과 동일한 높이 */
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 0 #CECFD1;
+  margin-right: 20px;
+}
+
+.input2 {
+  width: 150px; /* 추가된 부분: 버튼과 동일한 너비 */
+  height: 50px; /* 추가된 부분: 버튼과 동일한 높이 */
+  /* border: 1px solid #8F9092; */
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 0 #CECFD1; /* 추가된 부분: 버튼과 동일한 그림자 스타일 */
+}
+
+.input2:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(252, 252, 252, 0.4),
+    /* inset 10px 10px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(252, 252, 252, 0.4); */
+}
+
+.hollow-text {
+  display: inline-block;
+  position: relative;
+  line-height: 50px;
+  cursor: pointer;
+  color: #333; /* 텍스트 색상 추가 */
+  transition: color 0.3s ease; /* 색상 변경에 대한 트랜지션 효과 추가 */
+}
+
+.hollow-text.clicked {
+  position: relative;
+}
+
+/* .hollow-text:hover, */
+.hollow-text.clicked::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  transform: translateX(-50%);
+  box-shadow: inset 2px 2px 5px rgb(189, 189, 189);
+  cursor: pointer;
+  background-image: linear-gradient(to top, #fefeff 0%, rgba(252, 252, 252, 0.4), #3b3b3b 100%);
+  border-radius: 30px;
+  transition: background-image 0.3s ease; /* 배경 이미지 변경에 대한 트랜지션 효과 추가 */
+  /* 기존의 다양한 스타일들은 주석 처리되어 있습니다. 필요에 따라 주석을 해제하고 조절할 수 있습니다. */
+  /* margin-right: 20px; */
+  /* box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 0 #CECFD1; */
+}
+
+/* 마우스 오버 시 텍스트와 밑줄 색상 변경 */
+.hollow-text:hover {
+  color: #555; /* 마우스 오버 시 텍스트 색상 변경 */
+  .hollow-text.clicked::after {
+    background-image: linear-gradient(to top, #fefeff 0%, rgba(252, 252, 252, 0.6), #555 100%);
+    /* 마우스 오버 시 밑줄 배경 이미지 변경 */
+  }
+}
+
+
+.button,
+[role=button] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 30px;
+  border: 1px solid #8F9092;
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 0 #CECFD1;
+  margin-right: 20px;
+}
+
+.button::-moz-focus-inner,
+[role=button]::-moz-focus-inner {
+  border: 0;
+}
+
+.button > *,
+[role=button] > * {
+  transition: transform 0.2s ease;
+}
+
+.button:hover:not([disabled]),
+[role=button]:hover:not([disabled]) {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+.button:hover:not([disabled]) > *,
+[role=button]:hover:not([disabled]) > * {
+  transform: scale(0.975);
+}
+
+.button:focus:not(:active),
+[role=button]:focus:not(:active) {
+  -webkit-animation: active 0.9s alternate infinite;
+  animation: active 0.9s alternate infinite;
+  outline: none;
+}
+
+.button:active:not([disabled]),
+[role=button]:active:not([disabled]) {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+.button:active:not([disabled]) > *,
+[role=button]:active:not([disabled]) > * {
+  transform: scale(0.95);
+}
+
+.button:disabled,
+[role=button]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button.icon,
+[role=button].icon {
+  width: 50px;
+}
+
+.button.icon svg,
+[role=button].icon svg {
+  margin-top: 3px;
+  width: 30px;
+  height: 30px;
+}
+
+.html,
+.body {
+  background-color: var(--color-bg);
+}
+
+.p,
+.div {
+  color: var(--color-shadow);
+  text-shadow: 1px 1px 1px var(--color-white);
+}
+
+.form {
+  padding: var(--ruler);
+  width: calc(var(--ruler) * 20);
+  margin: 0 auto;
+}
+
+.segment {
+  padding: calc(var(--ruler) * 2) 0;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  margin-bottom: calc(var(--ruler) * 1.5);
+  width: 100%;
+}
+
+.input {
+  border: 0;
+  outline: 0;
+  font-size: var(--ruler);
+  border-radius: calc(var(--ruler) * 20);
+  padding: var(--ruler);
+  background-color: var(--color-bg);
+  text-shadow: 1px 1px 0 var(--color-white);
+}
+
+.input {
+  margin-right: calc(var(--ruler) / 2);
+  box-shadow: inset 2px 2px 5px var(--color-shadow), inset -5px -5px 10px var(--color-white);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#checkboxInput {
+  display: none;
+}
+
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0%;
+  left: 100%;
+  transform: translate(-150%, 100%);
+  width: 90px;
+  height: 30px;
+  background-color: rgb(206, 206, 206);
+  border-radius: 40px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  padding: 1rem 2rem;
+}
+
+.toggleSwitch::after {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 50%;
+  left: 0px;
+  background: conic-gradient(rgba(26, 26, 26, 0.555), white, rgba(26, 26, 26, 0.555), white, rgba(26, 26, 26, 0.555));
+  border-radius: 40px;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.281);
+}
+
+#checkboxInput:checked+.toggleSwitch::after {
+  transform: translateX(100%);
+  transition-duration: .3s;
+}
+
+#checkboxInput:checked+.toggleSwitch {
+  background-color: rgb(124, 173, 206);
+  transition-duration: .3s;
+}
