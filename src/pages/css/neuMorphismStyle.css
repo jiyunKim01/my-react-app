@@ -132,10 +132,21 @@
 
 /* 마우스 오버 시 텍스트와 밑줄 색상 변경 */
 .hollow-text:hover {
-  color: #555; /* 마우스 오버 시 텍스트 색상 변경 */
-  .hollow-text.clicked::after {
-    background-image: linear-gradient(to top, #fefeff 0%, rgba(252, 252, 252, 0.6), #555 100%);
-    /* 마우스 오버 시 밑줄 배경 이미지 변경 */
+  &:hover::after {
+    content: '';
+    position: absolute;
+    left: 50%; 
+    bottom: 0;
+    width: 100%;
+    height: 5px; 
+    transform: translateX(-50%);  
+    box-shadow: inset 2px 2px 5px rgb(189, 189, 189);
+    
+    
+    cursor: pointer;
+    background-image: linear-gradient(to top, #fefeff 0%, rgba(252, 252, 252, 0.4), #3b3b3b 100%);
+    border-radius: 30px;
+    margin-right: 20px;
   }
 }
 

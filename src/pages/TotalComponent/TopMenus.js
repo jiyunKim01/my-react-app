@@ -1,3 +1,6 @@
+//MOLECOCES(2)
+//top과 left, 각각 topInfoPage와 leftInfoPage에 넣어서 전달
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../css/TopMenuStyle.css";
@@ -6,10 +9,14 @@ import { motion } from "framer-motion";
 import Logo from "../PageComponent/Logo";
 import TopEdit from "./TopEdit";
 import TopMenuAdd from "../PageComponent/TopMenuAdd";
-import InfoPages from "./InfoPages.js";
+import MenuClick from "./MenuClick.js";
+import "../css/neuMorphismStyle.css";
 
 function TopMenus({ menus, menuStyle }) {
-  const MenuItem = ({ menuBox }) => <span className={`hollow-text`}>{menuBox}</span>;
+  const MenuItem = ({ menuBox }) => <span>{menuBox}</span>;
+
+  const topInfoPage = menuStyle.toLowerCase() === "top" ? menus : null;
+  const leftInfoPage = menuStyle.toLowerCase() === "left" ? menus : null;
 
   const menuTop = menus.map((menuBox, index) => (
     <div className={menuStyle} key={index}>
@@ -18,22 +25,21 @@ function TopMenus({ menus, menuStyle }) {
   ));
 
   const menuLeft = menus.map((menuBox, index) => (
-    <div className={menuStyle} key={index}>
+    <div className="hollow-text" key={index}>
       <MenuItem menuBox={menuBox} />
     </div>
   ));
 
-  useEffect(() => {
-    console.log(`Top updated: ${menuStyle === "button" ? menuTop : menuLeft}`);
-  }, [menuStyle]);
+  // useEffect(() => {
+  //   console.log(`Top updated: ${menuStyle === "button" ? menuTop : menuLeft}`);
+  // }, [menuStyle]);
+
+  console.log(`TopMenus: ${topInfoPage}`);
+  console.log(`LeftMenus: ${leftInfoPage}`);
 
   return (
     <>
-      {/* <InfoPages
-        menuTop={menuStyle.toLowerCase() === "top" ? menus : null}
-        menuLeft={menuStyle.toLowerCase() === "left" ? menus : null}
-      /> */}
-<InfoPages menuTop={menuStyle.toLowerCase() === "top" ? menus : null} menuLeft={menuStyle.toLowerCase() === "left" ? menus : null} />
+      <MenuClick menuTop={topInfoPage} menuLeft={leftInfoPage} />
     </>
   );
 }

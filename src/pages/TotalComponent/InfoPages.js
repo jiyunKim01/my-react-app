@@ -1,39 +1,35 @@
+//ATOMS(1)
+//배열을 받아 클릭한 값을 전달함
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import TopEdit from "./TopEdit";
 import TopMenuAdd from "../PageComponent/TopMenuAdd";
 
-function InfoPages({ menuTop, menuLeft }) {
+function InfoPages({ clickButton }) {
   const navigate = useNavigate();
 
-  const onClickMenu = (menuItem) => {
-    navigate(`../${menuItem}`);
+  const onClickMenu = (clickButton) => {
+    navigate(`../${clickButton}`);
   };
 
-  console.log(`Top updatedInfo!!!: ${menuTop}`);
-  console.log(`Left updatedInfo!!!: ${menuLeft}`);
+  console.log(`clickButton: ${clickButton}`);
+  console.log(`leftInfoPages: ${menuLeft}`);
+  console.log(`click: ${menuTopItems}`);
+
   
 
   return (
     <>
-      {menuTop && (
+      {menuTopItems && (
         <div className="TopHeader2">
-          {menuTop.map((menuItem, index) => (
-            <div key={index} onClick={() => onClickMenu(menuItem)} className={"button"}
-            >
-              {menuItem}
-            </div>
-          ))}
+          {menuTopItems}
           {TopMenuAdd()}
         </div>
       )}
-      {menuLeft && (
+      {menuLeftItems && (
         <div>
-          {menuLeft.map((menuItem, index) => (
-            <div key={index} onClick={() => onClickMenu(menuItem)} className={"LeftHeader"}>
-              {menuItem}
-            </div>
-          ))}
+          {menuLeftItems}
         </div>
       )}
     </>

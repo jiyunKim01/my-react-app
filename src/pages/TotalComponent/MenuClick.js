@@ -1,25 +1,53 @@
+//ATOMS(1)
+//배열을 받아 클릭한 값을 전달함
+
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import TopEdit from "./TopEdit";
+import TopMenuAdd from "../PageComponent/TopMenuAdd";
 
-function MenuClick(){
+function InfoPages({ menuTop, menuLeft }) {
+  const navigate = useNavigate();
 
-    const [clickLeftMenu, setClickLeftMenu] = useState(null);
-
-    useEffect(() => {
-      const currentMenu = location.pathname.split("/").pop();
-      setClickLeftMenu(currentMenu);
-    }, [location.pathname]);
+  // Check if menuTop and menuLeft are not null before using .map()
+  const menuTopItems = menuTop && menuTop.map((menuItem, index) => (
+    <div key={index} onClick={() => onClickMenu(menuItem)} className={"button"}>
+      {menuItem}
+    </div>
+  ));
   
-    const handleMenuClick = (menuBox) => {
-      setClickLeftMenu((prevMenu) => (prevMenu === menuBox ? null : menuBox));
+  const menuLeftItems = menuLeft && menuLeft.map((menuItem, index) => (
+    <div key={index} onClick={() => onClickMenu(menuItem)} className={"LeftHeader"}>
+      {menuItem}
+    </div>
+  ));
+
+  const onClickMenu = (menuItem) => {
+    navigate(`../${menuItem}`);
+  };
   
-      if (clickLeftMenu === menuBox) {
-        navigate("../");
-      } else {
-        navigate(`../${menuBox}`);
-      }
-    };
-    
-    return{};
+  
+  console.log(`topInfoPages: ${menuTop}`);
+  console.log(`leftInfoPages: ${menuLeft}`);
+  console.log(`click: ${menuTopItems}`);
+
+
+
+  return (
+    <>
+      {menuTopItems && (
+        <div className="TopHeader2">
+          {menuTopItems}
+          {TopMenuAdd()}
+        </div>
+      )}
+      {menuLeftItems && (
+        <div>
+          {menuLeftItems}
+        </div>
+      )}
+    </>
+  );
 }
 
-export default MenuClick;
+export default InfoPages;
