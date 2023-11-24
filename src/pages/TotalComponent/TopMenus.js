@@ -1,5 +1,5 @@
-//MOLECOCES(2)
-//top과 left, 각각 topInfoPage와 leftInfoPage에 넣어서 전달
+// MOLECULES(2)
+// TopMenus 컴포넌트
 
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -14,6 +14,8 @@ import "../css/neuMorphismStyle.css";
 
 function TopMenus({ menus, menuStyle }) {
   const MenuItem = ({ menuBox }) => <span>{menuBox}</span>;
+
+  const [clickedItem, setClickedItem] = useState(null);
 
   const topInfoPage = menuStyle.toLowerCase() === "top" ? menus : null;
   const leftInfoPage = menuStyle.toLowerCase() === "left" ? menus : null;
@@ -30,16 +32,17 @@ function TopMenus({ menus, menuStyle }) {
     </div>
   ));
 
-  // useEffect(() => {
-  //   console.log(`Top updated: ${menuStyle === "button" ? menuTop : menuLeft}`);
-  // }, [menuStyle]);
+  const onMenuClick = (menuItem) => {
+    setClickedItem(menuItem);
+  };
 
   console.log(`TopMenus: ${topInfoPage}`);
   console.log(`LeftMenus: ${leftInfoPage}`);
+  console.log(`Clicked Item: ${clickedItem}`);
 
   return (
     <>
-      <MenuClick menuTop={topInfoPage} menuLeft={leftInfoPage} />
+      <MenuClick menuTop={topInfoPage} menuLeft={leftInfoPage} onMenuClick={onMenuClick} />
     </>
   );
 }

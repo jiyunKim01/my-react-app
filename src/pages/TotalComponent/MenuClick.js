@@ -1,6 +1,3 @@
-//ATOMS(1)
-//배열을 받아 클릭한 값을 전달함
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import TopEdit from "./TopEdit";
@@ -23,15 +20,14 @@ function InfoPages({ menuTop, menuLeft }) {
   ));
 
   const onClickMenu = (menuItem) => {
+    console.log(`click: ${menuItem}`); // 클릭한 값 콘솔 출력
     navigate(`../${menuItem}`);
   };
   
   
   console.log(`topInfoPages: ${menuTop}`);
   console.log(`leftInfoPages: ${menuLeft}`);
-  console.log(`click: ${menuTopItems}`);
-
-
+  console.log(`click: ${menuTopItems}`); // 이 부분 수정
 
   return (
     <>
