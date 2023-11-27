@@ -4,6 +4,7 @@ import "../css/HeartButtonStyle.css";
 import Top from "../TotalComponent/Top";
 import PageDesign from "../TotalComponent/PageDesign";
 import LeftMenu from "../TotalComponent/LeftMenu"
+import PhoneDesign from "../DesignComponent/IphoneDesign";
 
 function Design() {
     return (
@@ -11,7 +12,8 @@ function Design() {
           <Top />
           <LeftMenu />
           <PageDesign/>
-          <HeartButton />
+          {/* <PhoneDesign/> */}
+          {/* <HeartButton /> */}
         </>
       );
 }

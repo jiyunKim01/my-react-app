@@ -11,7 +11,7 @@ function Cost() {
           <Top />
           <LeftMenu />
           <PageDesign/>
-          <HeartButton />
+          {/* <HeartButton /> */}
         </>
       );
 }

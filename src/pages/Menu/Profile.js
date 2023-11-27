@@ -11,7 +11,7 @@ function Profile() {
           <Top />
           <LeftMenu />
           <PageDesign/>
-          <HeartButton />
+          {/* <HeartButton /> */}
         </>
       );
 }

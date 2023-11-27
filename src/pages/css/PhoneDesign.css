@@ -1,0 +1,293 @@
+.flip-card {
+    background-color: transparent;
+    width: 286.4px;
+    height: 590.4px;
+    perspective: 1000px;
+    color: white;
+  }
+  
+  .heading_8264 {
+    position: absolute;
+    letter-spacing: .2em;
+    font-size: 0.5em;
+    width: 280.6154px;
+    height: 585.6px;
+    border: 1px solid gray;
+    top: 50%; /* 부모 요소의 세로 중앙을 기준으로 */
+    left: 50%; /* 부모 요소의 가로 중앙을 기준으로 */
+    transform: translate(-50%, -50%); /* 요소의 중심을 중앙으로 이동 */
+}
+
+  
+  .logo {
+    position: absolute;
+    top: 6.8em;
+    left: 11.7em;
+  }
+  
+  .chip {
+    position: absolute;
+    top: 2.3em;
+    left: 1.5em;
+  }
+  
+  .contactless {
+    position: absolute;
+    top: 3.5em;
+    left: 12.4em;
+  }
+  
+  .number {
+    position: absolute;
+    font-weight: bold;
+    font-size: .6em;
+    top: 8.3em;
+    left: 1.6em;
+  }
+  
+  .valid_thru {
+    position: absolute;
+    font-weight: bold;
+    top: 635.8em;
+    font-size: .01em;
+    left: 140.3em;
+  }
+  
+  .date_8264 {
+    position: absolute;
+    font-weight: bold;
+    font-size: 0.5em;
+    top: 13.6em;
+    left: 3.2em;
+  }
+  
+  .name {
+    position: absolute;
+    font-weight: bold;
+    font-size: 0.5em;
+    top: 16.1em;
+    left: 2em;
+  }
+  
+  .strip {
+    position: absolute;
+    background-color: black;
+    width: 15em;
+    height: 1.5em;
+    top: 2.4em;
+    background: repeating-linear-gradient(
+      45deg,
+      #303030,
+      #303030 10px,
+      #202020 10px,
+      #202020 20px
+    );
+  }
+  
+  .mstrip {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 8em;
+    height: 0.8em;
+    top: 5em;
+    left: .8em;
+    border-radius: 2.5px;
+  }
+  
+  .sstrip {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 4.1em;
+    height: 0.8em;
+    top: 5em;
+    left: 10em;
+    border-radius: 2.5px;
+  }
+  
+  .code {
+    font-weight: bold;
+    text-align: center;
+    margin: .2em;
+    color: black;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background: black;
+    border-radius: 35px;
+    border: 2px solid rgb(40, 40, 40);
+    padding: 7px;
+    position: relative;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-color: #171717;
+  }
+  
+  .flip-card-back {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-color: #171717;
+    transform: rotateY(180deg);
+  }
+
+ .page-design-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+    width: 210px;
+    height: 400px;
+    background: black;
+    border-radius: 35px;
+    border: 2px solid rgb(40, 40, 40);
+    padding: 7px;
+    position: relative;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486);
+  }
+  
+  .card-int {
+    background-image: linear-gradient(to right bottom, #ff0000, #ff0045, #ff0078, #ea00aa, #b81cd7, #8a3ad6, #5746cf, #004ac2, #003d94, #002e66, #001d3a, #020812);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    height: 100%;
+    border-radius: 25px;
+    transition: all 0.6s ease-out;
+    overflow: hidden;
+  }
+  
+  .card:hover .card-int {
+    background-position: 100% 100%;
+  }
+  
+  .top {
+    position: absolute;
+    top: 0px;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width: 35%;
+    height: 18px;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .speaker {
+    position: absolute;
+    top: 2px;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width: 40%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgb(20, 20, 20);
+  }
+  
+  .camera {
+    position: absolute;
+    top: 6px;
+    right: 84%;
+    transform: translate(50%, 0%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.048);
+  }
+  
+  .int {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(0, 0, 255, 0.212);
+  }
+  
+  .btn1, .btn2, .btn3, .btn4 {
+    position: absolute;
+    width: 2px;
+  }
+  
+  .btn1, .btn2, .btn3 {
+    height: 45px;
+    top: 30%;
+    right: -4px;
+    background-image: linear-gradient(to right, #111111, #222222, #333333, #464646, #595959);
+  }
+  
+  .btn2, .btn3 {
+    transform: scale(-1);
+    left: -4px;
+  }
+  
+  .btn2, .btn3 {
+    transform: scale(-1);
+    height: 30px;
+  }
+  
+  .btn2 {
+    top: 26%
+  }
+  
+  .btn3 {
+    top: 36%
+  }
+  
+  .hello {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .hidden {
+    display: block;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+  }
+  
+  .card:hover .hidden {
+    opacity: 1;
+  }
+  
+  .card:hover .hello {
+    transform: translateY(-20px);
+  }
+  
+  
+  
