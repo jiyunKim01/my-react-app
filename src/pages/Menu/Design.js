@@ -11,7 +11,7 @@ function Design() {
           <Top />
           <LeftMenu />
           <PageDesign/>
-          {/* <HeartButton /> */}
+          <HeartButton />
         </>
       );
 }

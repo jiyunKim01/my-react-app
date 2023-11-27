@@ -8,6 +8,7 @@ import Galaxy from "./pages/Menu/Galaxy.js";
 import Design from "./pages/Menu/Design.js";
 import Profile from "./pages/Menu/Profile.js";
 import Cost from "./pages/Menu/Cost.js";
+import TopMenus from "./pages/TotalComponent/TopMenus.js";
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
           <Route path="/Iphone" element={<Iphone />}></Route>
           <Route path="/Flip" element={<Flip />}></Route>
           <Route path="/Galaxy" element={<Galaxy />}></Route>
-          <Route path="/Design" element={<Design />}></Route>
-          <Route path="/Profile" element={<Profile />}></Route>
-          <Route path="/Cost" element={<Cost />}></Route>
+          <Route path="/:TopMenus/Design" element={<Design />}></Route>
+          <Route path="/:TopMenus/Profile" element={<Profile />}></Route>
+          <Route path="/:TopMenus/Cost" element={<Cost />}></Route>
+          {/* <Route path="/:TopMenus/:infoPages" element={<InfoPages />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
